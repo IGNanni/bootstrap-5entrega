@@ -1,0 +1,730 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    max-width: 100%;
+    font-size: 100%;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+}
+
+/* --- INDEX --- */
+html {
+    min-height: 100vh;
+    position: relative;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    line-height: 1.6em;
+/* --- propiedades para que el footer quede siempre abajo --- */
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+/* ------------- TEMPLATE-AREAS ------------- */
+.pagInicio {
+    display: grid;
+    grid-template-areas:    "encabezado"
+                            "navegacion"
+                            "banner"
+                            "principal"
+                            "pie"
+    ;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
+
+.pagVelas {
+    display: grid;
+    grid-template-areas:    "encabezado"
+                            "navegacion"
+                            "principal"
+                            "pie"
+    ;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
+
+/* ------------- LAYOUT GENERAL -------------  */
+/* --- HEADER --- */
+.header {
+    background-color: rgb(255, 255, 255);
+}
+
+.header a { /* --- enlaces del menu --- */
+        color: rgb(0, 0, 0);
+    }
+
+    .imagenes-header { /* --- redes . logo . carrito --- */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        .imagenes-header img {
+            width: 40px;
+            margin-left: 1px;
+        }
+
+/* --- REDES SOCIALES --- */
+.redes-sociales {
+    display: flex;
+}
+
+/* --- LOGO --- */
+.logo {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+    .logo img {
+        width: 400px;
+        margin-left: 0px;
+    }
+
+/* --- MENÚ --- */
+.nav-container {
+    grid-area: navegacion;
+    display: flex;
+    justify-content: center;
+    font-family: Lustria,display;
+    width: 100%;
+}
+.nav ul {
+    display: flex;
+    gap: 25px;
+    width: 50vw;
+    justify-content: space-evenly;
+}
+    .nav ul li {
+        display: flex;
+    }
+        .nav ul li a {
+            display: block;
+            padding: 0.3rem 0rem;
+            transition: none 0.4s linear;
+        }
+                .nav-link:hover {
+                    color: chocolate;
+                    text-decoration: underline;
+                }
+
+/* --- MENÚ HAMBURGUESA --- */
+.burgerMenu {
+    position: absolute;
+    z-index: 3;
+}
+
+  .burgerMenu a {
+    display: block;
+    padding: 10px 20px;
+    border-bottom: 2px solid white;
+    max-width: 200px;
+    background: rgb(228, 139, 76);
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 40px;
+    margin-top: 2px;
+    }
+
+  .burgerMenu input[type="checkbox"], .burgerMenu .burger, .burgerMenu .cross {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .burgerMenu .burger, .burgerMenu .cross {
+    position: relative;
+    font-size: 48px;
+    pointer-events: none;
+  }
+
+  .burgerMenu input[type="checkbox"] {
+    opacity: 0;
+  }
+  
+  .burgerMenu nav {
+    display: none;
+  }
+  
+  .burgerMenu input:checked ~ nav {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .burgerMenu input:checked ~ nav a:active {
+    background-color: rgb(255, 168, 87);
+  }
+  
+  .burgerMenu input:checked ~ .burger {
+    display: none;
+  }
+  
+  .burgerMenu input:not(:checked) ~ .cross {
+    display: none;
+  }
+
+/* --- PIE DE PÁGINA --- */
+.container-footer {
+    width: 100%;  
+    background: rgb(221, 156, 71);
+    position: absolute;
+/* --- propiedades para que el footer quede siempre abajo --- */
+    bottom: 0px;
+    height: 50px;
+}
+
+footer {
+    grid-area: pie;
+}
+
+.footer {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;  
+    padding: 10px;
+}
+
+    .copyright p{
+        color: #000000;
+        }
+
+            .copyright p span {
+            color: rgb(139, 74, 0);
+            font-weight: bold;
+            }
+
+        .documentos a {
+            color: #000000;
+        } 
+
+            .documentos a:hover {
+                color: rgb(139, 74, 0);
+            }
+
+
+/* ------------- PÁGINA INCIO --------------*/
+/* --- BANNER --- */
+.banner {
+    grid-area: banner;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 55px;
+    background-image: url(../images/banner.png);
+    font-family: Merienda, display;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    .banner h1 {
+        margin-left: 70px;
+        font-size:larger;
+        color: rgb(170, 168, 168);
+        font-style: oblique;
+    }
+
+/* ---------- MAIN CON TODAS LAS SECCIONES ----------*/
+main {
+    grid-area: principal;
+}
+/* ------------------ PÁGINA INICIO ------------------ */
+
+/* --- NAVEGACIÓN CON PESTAÑAS --- */
+/* --- CONTENEDOR PESTAÑAS --- */
+.containerTabs {
+    display: flex;
+    justify-content: center;
+    font-family: Lustria, display;
+    color: rgb(146, 146, 146);
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-size: larger;
+}
+
+/* --- PESTAÑAS --- */
+    .tabs ul {
+        display: flex;
+    }
+
+        .bar {
+            margin: 0 10px;
+        }
+    
+        .tabs li a {
+            color: rgb(146, 146, 146);
+        }
+
+            .tabs li a:hover {
+                color: chocolate;
+                font-weight: bold;
+            }
+
+/* --- CONTENEDOR HANDMADE --- */
+.padreTab-h {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    font-family: Lustria, display;
+    font-size: medium;
+}
+
+    .containerTab-h {
+        display: flex;
+        margin: 0 20px;
+        align-items:center;
+    }
+
+        .containerImg-h img {
+            margin-top: 35px;
+            width: 160px;
+        }
+
+        .containerTxt-h {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+            .containerTxt-h p {
+                margin-right: 30px;
+            }    
+
+            .containerTxt-h h2 {
+                margin-bottom: 10px;
+            }
+
+            .containerTxt-h a {
+                position: absolute;
+                bottom: 0.2px;
+                right: 90px;
+            }
+
+                .containerTxt-h a:hover {
+                    color: chocolate;
+                    transform: scale(1.1);
+                }
+
+    
+
+/* --- CONTENEDOR NOSOTROS --- */
+.padreTab-n {
+    display: flex;
+    font-family: Lustria, display;
+    font-size: medium;
+    margin-left: 40px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+    .padreTab-n img {
+        margin-top: 30px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .containerTxt-n {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        margin-right: 60px;
+        margin-top: 30px;
+    }
+
+        .containerTxt-n p {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .containerTxt-n a {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+            .containerTxt-n a:hover {
+                color: chocolate;
+                transform: scale(1.1);
+            }
+    
+
+/* ----------------- PÁGINAS VELAS | DIFUSORES ----------------- */
+.tittleVelas {
+    text-align: center;
+    margin: 50px 0 0 0;
+    font-family: Lustria;
+    font-size: x-large;
+}
+
+.tittleDifusores {
+    text-align: center;
+    margin: 50px 0 0 0;
+    font-family: Lustria;
+    font-size: x-large;
+}
+
+.containerLineas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+    .lineas {
+        display: flex;
+        position: relative;
+        font-family: Amatic SC;
+        box-shadow: 0px 0px 5px 5px rgba(162,171,185,0.5);
+        border-radius: 3%;
+        }
+
+    .lineas:hover {
+        transform: scale(1.1);
+    }
+
+        .lineas img {
+            display:flex;
+            flex-wrap: wrap;
+            margin: 5px;
+            align-items: center;
+            border-radius: 2%;
+            max-width: 100%;
+            height: auto;
+        }
+
+            .tituloLinea {
+                position: absolute;
+                top: 90%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2.8rem;
+            }
+
+/* ----------------- PÁGINA FAQ ----------------- */
+/* --- TÍTULO --- */ 
+.tittleFaq {
+    text-align: center;
+    margin: 40px 0 0 0;
+    font-family: Lustria;
+    font-size: x-large;
+}
+
+/* --- ACCORDION --- */
+/* contenedor accordion */
+.accordion {
+    margin: 20px 10vw;
+}
+
+/* ----------------- PÁGINA CONTACTO ----------------- */
+.tittleContacto {
+    text-align: center;
+    margin: 50px 0 0 0;
+    font-family: Lustria;
+    font-size: x-large;
+}
+
+.containerForm {
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+    font-family: 'Quicksand', sans-serif;
+    /* margin: 30px auto;
+    padding: auto; */
+    text-transform: uppercase;
+    font-size: medium;
+    width: 100vw;
+}
+
+.wrapper {
+    box-shadow: 0 0 20px 0 rgb(138, 138, 138);
+    padding: 10px;
+}
+
+.form {
+    background: #ffffff;
+    margin: 30px 50px;
+}
+
+::placeholder {
+    color: rgb(199, 194, 194);
+    padding: 10px;
+    font-size: 15px;
+}
+
+.nombreCompleto input {
+    height: 7vh;
+    width: 31vw;
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.correo input {
+    height: 7vh;
+    width: 31vw;
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.celCod input {
+    height: 7vh;
+    width: 35vw;
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.celMail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+    .celular {
+        margin-right: 60px;
+    }
+    .correo input {
+        width: 25vw;
+    
+    }
+    .cel input {
+        width: 23vw;
+    }
+
+.celular .celCod {
+    display: flex;
+}
+    .celCod p {
+        margin: 0px 10px;
+    }
+
+    .codArea input {
+        width: 9.5vw;
+    }
+
+    .celCod .guion {
+        justify-items: center;
+        margin-top: 8px;
+    }
+
+.containerQuestion {
+    display: block;
+    margin-top: 30px;
+    text-transform: initial;
+}
+
+.radio {
+    display: flex;
+    margin-top: 10px;
+}
+    .radio input {
+        cursor: pointer;
+    }
+
+    .radio .wp:hover {
+        cursor: pointer;
+    }
+        .wp {
+            margin-right: 40px;
+        }
+
+    .radio .mail:hover {
+        cursor: pointer;
+    }
+
+.containerConsulta {
+    display: flex;
+    margin-top: 30px;
+}
+
+.send {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 20px;
+}
+
+.consulta textarea {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    width: 60vw;
+}
+
+.form form button {
+    color: white;
+    background: chocolate;
+    border: 15px;
+    padding: 15px 30px;
+}
+    .form form button:hover {
+        color:white;
+        background-color: rgb(189, 79, 0);
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+/* ----------------- MEDIA QUERIES ----------------- */ /* Desktop First */
+/* ---- INICIO ---- */
+/* pc pantalla chica */
+@media (max-width: 769px) { /* menor a 769px ... */
+    .padreTab-h {
+        display: block;
+    }
+
+    .footer p {
+        font-size: small;
+    }
+
+    .footer a {
+        font-size: small;
+    }
+
+/* navegación pestañas */
+/* handmade */
+    .padreTab-h {
+        display: block;
+    }
+
+/* nosotros */
+    .padreTab-n {
+        display: grid;
+        grid-template-areas:
+                            "imagen parrafo"
+                            ". vermas"
+        ;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        margin: 5px;
+        align-items: center;
+    }
+
+    .padreTab-n img {
+        width: 400px;
+        height: auto;
+    }
+
+    .padreTab-n a {
+        bottom: 0px;
+        right: 0px;
+    }
+
+    .padreTab-n p {
+        margin-left: 10%;
+    }
+
+/* pie de página */
+    .footer p {
+        font-size: small;
+    }
+
+    .footer a {
+        font-size: small;
+    }
+
+/* velas | difusores */
+    .lineas {
+        display: block;
+    }
+
+    .lineas:hover {
+        transform: scale(1);
+    }
+}
+
+/* tablet */
+@media (max-width: 481px) { /* menor a 481px ... */
+    .pagInicio {
+        font-size: small;
+    }
+
+/* logo */
+    .logo img {
+        width: 300px;
+        margin: auto;
+    }
+
+/* menú */
+    .nav-container {
+        display: none;
+    }
+
+/* banner */
+    .banner {
+        display: none;
+    }
+
+/* navegación pestañas */
+    .padreTab-h {
+        font-size: x-small;
+    }
+
+    .padreTab-n {
+        font-size: x-small;
+    }
+
+/* main todas las secciones*/
+    main {
+        margin-top: 40px;
+    }
+
+/* pie de página */
+    .footer {
+        justify-content: center;
+    }
+
+    .documentos {
+        display: none;
+    }
+
+/* form */
+    .containerForm {
+        margin-top: 30px;
+    }
+
+    .celMail {
+        display: block;
+    }
+
+    .correo {
+        margin-top: 30px;
+    }
+
+    .containerConsulta {
+        display: block;
+    }
+
+    .send {
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+/* mobile */
+@media (min-width: 480px) { /* mayor a 480px ... */
+    .burgerMenu {
+        display: none;
+    }
+}
+
+@media (max-width: 321px) { /* menor a 321px ... */
+/* pie de página */
+    .footer p {
+        font-size: xx-small;
+    }
+
+    .footer a {
+        font-size: xx-small;
+    }
+}
