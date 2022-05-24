@@ -28,6 +28,32 @@ body {
     margin-bottom: 50px;
 }
 
+/* ------------- MENÚ ACTIVO ------------- */
+body.inicio li.inicio a {
+    color: chocolate;
+    text-decoration: underline;
+}
+
+body.velas li.velas a {
+    color: chocolate;
+    text-decoration: underline;
+}
+
+body.difusores li.difusores a {
+    color: chocolate;
+    text-decoration: underline;
+}
+
+body.faq li.faq a {
+    color: chocolate;
+    text-decoration: underline;
+}
+
+body.contacto li.contacto a {
+    color: chocolate;
+    text-decoration: underline;
+}
+
 /* ------------- TEMPLATE-AREAS ------------- */
 .pagInicio {
     display: grid;
@@ -174,6 +200,7 @@ body {
     display: none;
   }
 
+
 /* --- PIE DE PÁGINA --- */
 .container-footer {
     width: 100%;  
@@ -197,6 +224,7 @@ footer {
 
     .copyright p{
         color: #000000;
+        margin-bottom: 0;
         }
 
             .copyright p span {
@@ -225,12 +253,37 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
 }
-    .banner h1 {
+    .h1Banner {
         margin-left: 70px;
         font-size:larger;
         color: rgb(170, 168, 168);
         font-style: oblique;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 2s steps(53) normal,
+        blink 800ms steps(53) infinite normal;
+        border-right: 2px solid black;
+        width: 43ch;
     }
+
+    @keyframes typing { 
+        from {
+          width: 0%;
+        }
+        to {
+          width: 43ch;
+        }
+      }
+    
+      @keyframes blink { /* git */
+        from {
+          border-color: black;
+        }
+        to {
+          border-color: transparent;
+        }
+      }
+    
 
 /* ---------- MAIN CON TODAS LAS SECCIONES ----------*/
 main {
@@ -314,7 +367,6 @@ main {
                     transform: scale(1.1);
                 }
 
-    
 
 /* --- CONTENEDOR NOSOTROS --- */
 .padreTab-n {
@@ -360,18 +412,48 @@ main {
 
 /* ----------------- PÁGINAS VELAS | DIFUSORES ----------------- */
 .tittleVelas {
+    display: flex;
     text-align: center;
+    justify-content: center;
     margin: 50px 0 0 0;
     font-family: Lustria;
     font-size: x-large;
 }
 
 .tittleDifusores {
+    display: flex;
     text-align: center;
+    justify-content: center;
     margin: 50px 0 0 0;
     font-family: Lustria;
     font-size: x-large;
 }
+
+.conoce {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 3s steps(23) normal,
+    blink 800ms steps(23) infinite normal;
+    border-right: 2px solid black;
+}
+
+@keyframes typewriter { 
+    from {
+      width: 0%;
+    }
+    to {
+      width: 19ch;
+    }
+  }
+
+  @keyframes blink { 
+    from {
+      border-color: black;
+    }
+    to {
+      border-color: transparent;
+    }
+  }
 
 .containerLineas {
     display: flex;
@@ -403,7 +485,13 @@ main {
             border-radius: 2%;
             max-width: 100%;
             height: auto;
+            filter: grayscale(100%);
+            transition: filter .5;
         }
+
+            .lineas img:hover {
+                filter: grayscale(0);
+            }
 
             .tituloLinea {
                 position: absolute;
@@ -427,6 +515,20 @@ main {
 .accordion {
     margin: 20px 10vw;
 }
+
+.accordion-button:not(.collapsed) {
+    background-color: rgb(216, 136, 79);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+    color: aquamarine;
+}
+
 
 /* ----------------- PÁGINA CONTACTO ----------------- */
 .tittleContacto {
