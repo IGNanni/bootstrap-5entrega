@@ -1,0 +1,210 @@
+
+$colorReset: black;
+$colorBase: chocolate;
+
+/* ------------- MENÚ ACTIVO ------------- */
+body {
+    &.inicio {
+        li.inicio {
+            & a {
+                color: $colorBase;
+                text-decoration: underline;
+
+            }
+        }
+    }
+
+    &.velas {
+        li.velas {
+            & a {
+                color: $colorBase;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.difusores {
+        li.difusores {
+            & a {
+                color: $colorBase;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.faq {
+        li.faq {
+            & a {
+                color: $colorBase;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.contacto {
+        li.contacto {
+            & a {
+                color: $colorBase;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+/* ------------- LAYOUT GENERAL -------------  */
+/* --- HEADER --- */
+.header {
+    background-color: rgb(255, 255, 255);
+
+    & a { /* --- enlaces del menu --- */
+        color: $colorReset;
+    }
+}
+
+/* --- MENÚ --- */
+.nav-container {
+    & ul {
+        & li {
+            & a {
+                transition: none 0.4s linear;
+            }
+        }
+    }
+}
+
+.nav-link:hover {
+    color: $colorBase;
+    text-decoration: underline;
+}
+
+/* --- MENÚ HAMBURGUESA --- */
+
+  .burgerMenu {
+      & a {
+        border-bottom: 2px solid white;
+        background: rgb(228, 139, 76);
+        color: $colorReset;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      & input[type="checkbox"] {
+        opacity: 0;
+      }
+    }
+
+  .burgerMenu input:checked ~ nav a:active {
+    background-color: rgb(255, 168, 87);
+  }
+
+
+/* --- PIE DE PÁGINA --- */
+.container-footer {
+    background: rgb(221, 156, 71);
+}
+
+    .copyright p{
+        color: $colorReset;
+
+        & span {
+            color: rgb(139, 74, 0);
+            font-weight: bold;
+            }
+        }
+
+        .documentos {
+            & a {
+                color: $colorReset;
+
+                &:hover {
+                    color: rgb(139, 74, 0);
+                }
+            }
+        }
+
+/* ------------- PÁGINA INCIO --------------*/
+/* --- BANNER --- */
+.banner {
+    & div {
+        & h1 {
+            color: rgb(170, 168, 168);
+            animation: typing 2s steps(53) normal,
+            blink 800ms steps(53) infinite normal;
+            border-right: 2px solid black;
+            width: 43ch;
+        }
+    }
+}
+    @keyframes typing { 
+        from {
+          width: 0%;
+        }
+        to {
+          width: 43ch;
+        }
+      }
+    
+      @keyframes blink { /* git */
+        from {
+          border-color: $colorReset;
+        }
+        to {
+          border-color: transparent;
+        }
+      }
+
+/* ---------- MAIN CON TODAS LAS SECCIONES ----------*/
+
+/* ------------------ PÁGINA INICIO ------------------ */
+
+/* --- NAVEGACIÓN CON PESTAÑAS --- */
+/* --- CONTENEDOR PESTAÑAS --- */
+main {
+    & .containerTabs {
+        color: rgb(146, 146, 146);
+    }
+}
+
+/* --- PESTAÑAS --- */
+.containerTabs {
+    & .tabs {
+        & ul { 
+            & li {
+                & a {
+                    color: rgb(146, 146, 146);
+                    &:hover {
+                        color: $colorBase;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* --- CONTENEDOR HANDMADE --- */
+.padreTab-h {
+    & div {
+        & div {
+            & a:hover {
+                color: $colorBase;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/* --- CONTENEDOR NOSOTROS --- */
+.containerTab-n {
+    & div {
+        & div {
+            & a {
+                &:hover {
+                    color: $colorBase;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

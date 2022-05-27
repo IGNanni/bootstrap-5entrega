@@ -1,2 +1,666 @@
+@charset "UTF-8";
+/* line 1, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 100%;
+  font-size: 100%;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+}
+
+/* --- INDEX --- */
+/* line 14, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_reset.scss */
+html {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* line 19, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_reset.scss */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.6em;
+  /* --- propiedades para que el footer quede siempre abajo --- */
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+/* ------------- TEMPLATE-AREAS ------------- */
+/* line 2, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.pagInicio {
+  display: grid;
+  grid-template-areas: "encabezado" "navegacion" "banner" "principal" "pie";
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+}
+
+/* line 14, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.pagVelas {
+  display: grid;
+  grid-template-areas: "encabezado" "navegacion" "principal" "pie";
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+}
+
+/* ------------- LAYOUT GENERAL -------------  */
+/* --- HEADER --- */
+/* line 27, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.imagenes-header {
+  /* --- redes . logo . carrito --- */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* line 32, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.imagenes-header img {
+  width: 40px;
+  margin-left: 1px;
+}
+
+/* --- REDES SOCIALES --- */
+/* line 40, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.redes-sociales {
+  display: flex;
+}
+
+/* --- LOGO --- */
+/* line 45, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.logo {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+/* line 49, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.logo img {
+  width: 400px;
+  margin-left: 0px;
+}
+
+/* --- MENÚ --- */
+/* line 56, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.nav-container {
+  grid-area: navegacion;
+  display: flex;
+  justify-content: center;
+  font-family: Lustria,display;
+  width: 100%;
+}
+
+/* line 63, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.nav ul {
+  display: flex;
+  gap: 25px;
+  width: 50vw;
+  justify-content: space-evenly;
+}
+
+/* line 69, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.nav ul li {
+  display: flex;
+}
+
+/* line 72, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.nav ul a {
+  display: block;
+  padding: 0.3rem 0rem;
+}
+
+/* --- MENÚ HAMBURGUESA --- */
+/* line 79, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu {
+  position: absolute;
+  z-index: 3;
+}
+
+/* line 83, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu a {
+  display: block;
+  padding: 10px 20px;
+  border-bottom: 2px solid white;
+  max-width: 200px;
+  background: #e48b4c;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 40px;
+  margin-top: 2px;
+}
+
+/* line 97, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu input[type="checkbox"], .burgerMenu .burger, .burgerMenu .cross {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+/* line 105, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu .burger, .burgerMenu .cross {
+  position: relative;
+  font-size: 48px;
+  pointer-events: none;
+}
+
+/* line 111, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu input[type="checkbox"] {
+  opacity: 0;
+}
+
+/* line 115, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu nav {
+  display: none;
+}
+
+/* line 119, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu input:checked ~ nav {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* line 124, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu input:checked ~ nav a:active {
+  background-color: #ffa857;
+}
+
+/* line 128, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu input:checked ~ .burger {
+  display: none;
+}
+
+/* line 132, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.burgerMenu input:not(:checked) ~ .cross {
+  display: none;
+}
+
+/* --- PIE DE PÁGINA --- */
+/* line 137, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.container-footer {
+  width: 100%;
+  position: absolute;
+  /* --- propiedades para que el footer quede siempre abajo --- */
+  bottom: 0px;
+  height: 50px;
+}
+
+/* line 145, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+footer {
+  grid-area: pie;
+}
+
+/* line 149, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.footer {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* line 156, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.copyright p {
+  margin-bottom: 0;
+}
+
+/* ------------- PÁGINA INCIO --------------*/
+/* --- BANNER --- */
+/* line 163, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.banner {
+  grid-area: banner;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 55px;
+  background-image: url(../images/banner.png);
+  font-family: Merienda, display;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 174, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.banner div h1 {
+  margin-left: 70px;
+  font-size: larger;
+  font-style: oblique;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ---------- MAIN CON TODAS LAS SECCIONES ----------*/
+/* line 185, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+main {
+  grid-area: principal;
+}
+
+/* ------------------ PÁGINA INICIO ------------------ */
+/* --- NAVEGACIÓN CON PESTAÑAS --- */
+/* --- CONTENEDOR PESTAÑAS --- */
+/* line 192, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.containerTabs {
+  display: flex;
+  justify-content: center;
+  font-family: Lustria, display;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  font-size: larger;
+}
+
+/* --- PESTAÑAS --- */
+/* line 204, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.containerTabs .tabs ul {
+  display: flex;
+}
+
+/* line 206, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.containerTabs .tabs ul .bar {
+  margin: 0 10px;
+}
+
+/* --- CONTENEDOR HANDMADE --- */
+/* line 214, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-h {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  font-family: Lustria, display;
+  font-size: medium;
+}
+
+/* line 221, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-h .containerTab-h {
+  display: flex;
+  margin: 0 20px;
+  align-items: center;
+}
+
+/* line 227, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-h .containerTxt-h {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* line 233, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-h .containerTxt-h h2 {
+  margin-bottom: 10px;
+}
+
+/* line 237, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-h .containerTxt-h p {
+  margin-right: 30px;
+}
+
+/* line 241, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-h .containerTxt-h a {
+  position: absolute;
+  bottom: 0.2px;
+  right: 90px;
+}
+
+/* --- CONTENEDOR NOSOTROS --- */
+/* line 251, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-n {
+  display: flex;
+  font-family: Lustria, display;
+  font-size: medium;
+  margin-left: 40px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+/* line 259, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-n img {
+  margin-top: 30px;
+  width: 200px;
+  height: 200px;
+}
+
+/* line 265, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-n div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-right: 60px;
+  margin-top: 30px;
+}
+
+/* line 274, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-n div p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* line 279, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_estructura.scss */
+.padreTab-n div a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* ------------- MENÚ ACTIVO ------------- */
+/* line 9, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+body.inicio li.inicio a {
+  color: chocolate;
+  text-decoration: underline;
+}
+
+/* line 19, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+body.velas li.velas a {
+  color: chocolate;
+  text-decoration: underline;
+}
+
+/* line 28, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+body.difusores li.difusores a {
+  color: chocolate;
+  text-decoration: underline;
+}
+
+/* line 37, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+body.faq li.faq a {
+  color: chocolate;
+  text-decoration: underline;
+}
+
+/* line 46, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+body.contacto li.contacto a {
+  color: chocolate;
+  text-decoration: underline;
+}
+
+/* ------------- LAYOUT GENERAL -------------  */
+/* --- HEADER --- */
+/* line 57, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.header {
+  background-color: white;
+}
+
+/* line 60, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.header a {
+  /* --- enlaces del menu --- */
+  color: black;
+}
+
+/* --- MENÚ --- */
+/* line 69, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.nav-container ul li a {
+  transition: none 0.4s linear;
+}
+
+/* line 76, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.nav-link:hover {
+  color: chocolate;
+  text-decoration: underline;
+}
+
+/* --- MENÚ HAMBURGUESA --- */
+/* line 84, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.burgerMenu a {
+  border-bottom: 2px solid white;
+  background: #e48b4c;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* line 92, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.burgerMenu input[type="checkbox"] {
+  opacity: 0;
+}
+
+/* line 97, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.burgerMenu input:checked ~ nav a:active {
+  background-color: #ffa857;
+}
+
+/* --- PIE DE PÁGINA --- */
+/* line 103, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.container-footer {
+  background: #dd9c47;
+}
+
+/* line 107, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.copyright p {
+  color: black;
+}
+
+/* line 110, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.copyright p span {
+  color: #8b4a00;
+  font-weight: bold;
+}
+
+/* line 117, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.documentos a {
+  color: black;
+}
+
+/* line 120, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.documentos a:hover {
+  color: #8b4a00;
+}
+
+/* ------------- PÁGINA INCIO --------------*/
+/* --- BANNER --- */
+/* line 130, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.banner div h1 {
+  color: #aaa8a8;
+  animation: typing 2s steps(53) normal, blink 800ms steps(53) infinite normal;
+  border-right: 2px solid black;
+  width: 43ch;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 43ch;
+  }
+}
+
+@keyframes blink {
+  /* git */
+  from {
+    border-color: black;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
+/* ---------- MAIN CON TODAS LAS SECCIONES ----------*/
+/* ------------------ PÁGINA INICIO ------------------ */
+/* --- NAVEGACIÓN CON PESTAÑAS --- */
+/* --- CONTENEDOR PESTAÑAS --- */
+/* line 164, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+main .containerTabs {
+  color: #929292;
+}
+
+/* --- PESTAÑAS --- */
+/* line 174, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.containerTabs .tabs ul li a {
+  color: #929292;
+}
+
+/* line 176, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.containerTabs .tabs ul li a:hover {
+  color: chocolate;
+  font-weight: bold;
+}
+
+/* --- CONTENEDOR HANDMADE --- */
+/* line 190, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.padreTab-h div div a:hover {
+  color: chocolate;
+  transform: scale(1.1);
+}
+
+/* --- CONTENEDOR NOSOTROS --- */
+/* line 203, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_decoracion.scss */
+.containerTab-n div div a:hover {
+  color: chocolate;
+  transform: scale(1.1);
+}
+
+/* ----------------- MEDIA QUERIES ----------------- */
+/* Desktop First */
+/* ---- INICIO ---- */
+/* pc pantalla chica */
+@media (max-width: 769px) {
+  /* menor a 769px ... */
+  /* navegación pestañas */
+  /* handmade */
+  /* line 9, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .padreTab-h {
+    display: block;
+  }
+  /* nosotros */
+  /* line 14, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .padreTab-n {
+    display: grid;
+    grid-template-areas: "imagen parrafo" ". vermas";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+    margin: 5px;
+    align-items: center;
+  }
+  /* line 25, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .padreTab-n img {
+    width: 400px;
+    height: auto;
+  }
+  /* line 30, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .padreTab-n a {
+    bottom: 0px;
+    right: 0px;
+  }
+  /* line 35, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .padreTab-n p {
+    margin-left: 10%;
+  }
+  /* velas | difusores */
+  /* line 41, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .lineas {
+    display: block;
+  }
+  /* line 44, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .lineas:hover {
+    transform: scale(1);
+  }
+}
+
+/* pie de página */
+/* line 52, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+.footer p {
+  font-size: small;
+}
+
+/* line 56, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+.footer a {
+  font-size: small;
+}
+
+/* tablet */
+@media (max-width: 481px) {
+  /* menor a 481px ... */
+  /* line 63, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .pagInicio {
+    font-size: small;
+  }
+  /* logo */
+  /* line 68, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .logo img {
+    width: 300px;
+    margin: auto;
+  }
+  /* menú */
+  /* line 74, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .nav-container {
+    display: none;
+  }
+  /* banner */
+  /* line 79, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .banner {
+    display: none;
+  }
+  /* navegación pestañas */
+  /* line 84, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .padreTab-h {
+    font-size: x-small;
+  }
+  /* line 88, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .padreTab-n {
+    font-size: x-small;
+  }
+  /* main todas las secciones*/
+  /* line 93, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  main {
+    margin-top: 40px;
+  }
+  /* pie de página */
+  /* line 98, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .footer {
+    justify-content: center;
+  }
+  /* line 102, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .documentos {
+    display: none;
+  }
+  /* form */
+  /* line 107, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .containerForm {
+    margin-top: 30px;
+  }
+  /* line 111, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .celMail {
+    display: block;
+  }
+  /* line 115, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .correo {
+    margin-top: 30px;
+  }
+  /* line 119, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .containerConsulta {
+    display: block;
+  }
+  /* line 123, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .send {
+    align-items: center;
+    padding: 10px;
+  }
+}
+
+/* mobile */
+@media (min-width: 480px) {
+  /* mayor a 480px ... */
+  /* line 131, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .burgerMenu {
+    display: none;
+  }
+}
+
+@media (max-width: 321px) {
+  /* menor a 321px ... */
+  /* pie de página */
+  /* line 139, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .footer p {
+    font-size: small;
+  }
+  /* line 143, ../Personal Stuff/CODERHOUSE/WEB DEVELOPER/ENTREGAS/6/athabasca/sass/_media.scss */
+  .footer a {
+    font-size: small;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,147 @@
+
+/* ----------------- MEDIA QUERIES ----------------- */ /* Desktop First */
+/* ---- INICIO ---- */
+/* pc pantalla chica */
+@media (max-width: 769px) { /* menor a 769px ... */
+
+/* navegación pestañas */
+/* handmade */
+    .padreTab-h {
+        display: block;
+    }
+
+/* nosotros */
+    .padreTab-n {
+        display: grid;
+        grid-template-areas:
+                            "imagen parrafo"
+                            ". vermas"
+        ;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        margin: 5px;
+        align-items: center;
+
+        & img {
+            width: 400px;
+            height: auto;
+        }
+    
+        & a {
+            bottom: 0px;
+            right: 0px;
+        }
+    
+        & p {
+            margin-left: 10%;
+        }
+    }
+
+/* velas | difusores */
+    .lineas {
+        display: block;
+
+        &:hover {
+            transform: scale(1);
+        }
+    }
+}
+
+/* pie de página */
+.footer {
+    & p {
+        font-size: small;
+    }
+    
+    & a {
+        font-size: small;
+    }
+}
+
+/* tablet */
+@media (max-width: 481px) { /* menor a 481px ... */
+    .pagInicio {
+        font-size: small;
+    }
+
+/* logo */
+    .logo img {
+        width: 300px;
+        margin: auto;
+    }
+
+/* menú */
+    .nav-container {
+        display: none;
+    }
+
+/* banner */
+    .banner {
+        display: none;
+    }
+
+/* navegación pestañas */
+    .padreTab-h {
+        font-size: x-small;
+    }
+
+    .padreTab-n {
+        font-size: x-small;
+    }
+
+/* main todas las secciones*/
+    main {
+        margin-top: 40px;
+    }
+
+/* pie de página */
+    .footer {
+        justify-content: center;
+    }
+
+    .documentos {
+        display: none;
+    }
+
+/* form */
+    .containerForm {
+        margin-top: 30px;
+    }
+
+    .celMail {
+        display: block;
+    }
+
+    .correo {
+        margin-top: 30px;
+    }
+
+    .containerConsulta {
+        display: block;
+    }
+
+    .send {
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+/* mobile */
+@media (min-width: 480px) { /* mayor a 480px ... */
+    .burgerMenu {
+        display: none;
+    }
+}
+
+@media (max-width: 321px) { /* menor a 321px ... */
+/* pie de página */
+    .footer {
+        & p {
+            font-size: small;
+        }
+        
+        & a {
+            font-size: small;
+        }
+    }
+}

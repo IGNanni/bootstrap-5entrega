@@ -1,0 +1,292 @@
+/* ------------- TEMPLATE-AREAS ------------- */
+.pagInicio {
+    display: grid;
+    grid-template-areas:    "encabezado"
+                            "navegacion"
+                            "banner"
+                            "principal"
+                            "pie"
+    ;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
+
+.pagVelas {
+    display: grid;
+    grid-template-areas:    "encabezado"
+                            "navegacion"
+                            "principal"
+                            "pie"
+    ;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
+
+/* ------------- LAYOUT GENERAL -------------  */
+/* --- HEADER --- */
+    .imagenes-header { /* --- redes . logo . carrito --- */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        & img {
+            width: 40px;
+            margin-left: 1px;
+        }
+    }
+
+
+/* --- REDES SOCIALES --- */
+.redes-sociales {
+    display: flex;
+}
+
+/* --- LOGO --- */
+.logo {
+    display: flex;
+    margin-bottom: 5px;
+
+    & img {
+        width: 400px;
+        margin-left: 0px;
+    }
+}
+
+/* --- MENÚ --- */
+.nav-container {
+    grid-area: navegacion;
+    display: flex;
+    justify-content: center;
+    font-family: Lustria,display;
+    width: 100%;
+}
+.nav ul {
+    display: flex;
+    gap: 25px;
+    width: 50vw;
+    justify-content: space-evenly;
+
+    & li {
+        display: flex;
+    }
+        & a {
+            display: block;
+            padding: 0.3rem 0rem;
+        }
+}
+
+/* --- MENÚ HAMBURGUESA --- */
+.burgerMenu {
+    position: absolute;
+    z-index: 3;
+
+    & a {
+        display: block;
+        padding: 10px 20px;
+        border-bottom: 2px solid white;
+        max-width: 200px;
+        background: rgb(228, 139, 76);
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-left: 40px;
+        margin-top: 2px;
+    }
+}
+
+  .burgerMenu input[type="checkbox"], .burgerMenu .burger, .burgerMenu .cross {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .burgerMenu .burger, .burgerMenu .cross {
+    position: relative;
+    font-size: 48px;
+    pointer-events: none;
+  }
+
+  .burgerMenu input[type="checkbox"] {
+    opacity: 0;
+  }
+  
+  .burgerMenu nav {
+    display: none;
+  }
+  
+  .burgerMenu input:checked ~ nav {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .burgerMenu input:checked ~ nav a:active {
+    background-color: rgb(255, 168, 87);
+  }
+  
+  .burgerMenu input:checked ~ .burger {
+    display: none;
+  }
+  
+  .burgerMenu input:not(:checked) ~ .cross {
+    display: none;
+  }
+
+/* --- PIE DE PÁGINA --- */
+.container-footer {
+    width: 100%;  
+    position: absolute;
+/* --- propiedades para que el footer quede siempre abajo --- */
+    bottom: 0px;
+    height: 50px;
+}
+
+footer {
+    grid-area: pie;
+}
+
+.footer {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;  
+    padding: 10px;
+}
+
+    .copyright p{
+        margin-bottom: 0;
+        }
+
+
+/* ------------- PÁGINA INCIO --------------*/
+/* --- BANNER --- */
+.banner {
+    grid-area: banner;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 55px;
+    background-image: url(../images/banner.png);
+    font-family: Merienda, display;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    & div {
+        & h1 {
+                margin-left: 70px;
+                font-size: larger;
+                font-style: oblique;
+                white-space: nowrap;
+                overflow: hidden;
+        }
+    }
+}
+
+/* ---------- MAIN CON TODAS LAS SECCIONES ----------*/
+main {
+    grid-area: principal;
+}
+/* ------------------ PÁGINA INICIO ------------------ */
+
+/* --- NAVEGACIÓN CON PESTAÑAS --- */
+/* --- CONTENEDOR PESTAÑAS --- */
+.containerTabs {
+    display: flex;
+    justify-content: center;
+    font-family: Lustria, display;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-size: larger;
+}
+
+/* --- PESTAÑAS --- */
+.containerTabs {
+    & .tabs {
+        & ul {
+            display: flex;
+            & .bar {
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+/* --- CONTENEDOR HANDMADE --- */
+.padreTab-h {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    font-family: Lustria, display;
+    font-size: medium;
+
+    & .containerTab-h {
+        display: flex;
+        margin: 0 20px;
+        align-items:center;
+    }
+
+    & .containerTxt-h {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 20px;
+
+        & h2 {
+            margin-bottom: 10px;
+        }
+
+        & p {
+            margin-right: 30px;
+        }
+
+        & a {
+            position: absolute;
+            bottom: 0.2px;
+            right: 90px;
+        }
+
+    }
+}
+
+/* --- CONTENEDOR NOSOTROS --- */
+.padreTab-n {
+    display: flex;
+    font-family: Lustria, display;
+    font-size: medium;
+    margin-left: 40px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+
+    & img {
+        margin-top: 30px;
+        width: 200px;
+        height: 200px;
+    }
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        margin-right: 60px;
+        margin-top: 30px;
+
+        & p {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        & a {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    }
+}
+
+
+
+    
+
+
+
